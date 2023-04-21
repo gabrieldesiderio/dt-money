@@ -6,7 +6,7 @@
       "type": "income",
       "category": "Venda",
       "price": 14000,
-      "createdAt": "2023-04-21T21:47:09.506Z"
+      "createdAt": "2023-04-20T21:48:09.506Z"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "type": "outcome",
       "category": "Alimentação",
       "price": 60,
-      "createdAt": "2023-04-21T20:47:09.506Z"
+      "createdAt": "2023-04-20T20:49:09.506Z"
     },
     {
       "id": 3,
@@ -22,7 +22,31 @@
       "type": "outcome",
       "category": "Educação",
       "price": 1980,
-      "createdAt": "2023-04-24T20:47:09.506Z"
+      "createdAt": "2023-04-20T20:50:09.506Z"
+    },
+    {
+      "description": "Desenvolvimento de APP",
+      "price": 10000,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2023-04-21T23:33:50.504Z",
+      "id": 4
+    },
+    {
+      "description": "Pastel",
+      "price": 5,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2023-04-21T23:37:54.959Z",
+      "id": 5
+    },
+    {
+      "description": "Pizza",
+      "price": 56,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2023-04-21T23:45:21.202Z",
+      "id": 6
     }
   ]
 }

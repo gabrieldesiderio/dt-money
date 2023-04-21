@@ -22,7 +22,7 @@ export function Summary() {
         </header>
         <strong>{priceFormatter.format(summary.outcome)}</strong>
       </S.SummaryCard>
-      <S.SummaryCard variant='green'>
+      <S.SummaryCard variant="green">
         <header>
           <span>Total</span>
           <CurrencyDollar size={32} color="#fff" />
