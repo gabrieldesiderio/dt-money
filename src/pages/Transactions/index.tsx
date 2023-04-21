@@ -1,10 +1,14 @@
+import { useContext, useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
 import { SearchForm } from "./components/SearchForm";
 
 import * as S from './styles'
+import { TransactionsContext } from "../../contexts/TransactionsContext";
 
 export function Transactions() {
+  const { transactions } = useContext(TransactionsContext);
+  
   return (
     <div>
       <Header />
@@ -14,38 +18,20 @@ export function Transactions() {
         <SearchForm />
         <S.TransactionsTable>
           <tbody>
-            <tr>
-              <td width="40%">Desenvolvimento de site</td>
-              <td>
-                <S.Pricehighlight variant="income">R$ 12.000,00</S.Pricehighlight>
-              </td>
-              <td>Venda</td>
-              <td>13/04/2023</td>
-            </tr>
-            <tr>
-              <td width="40%">Hamburguer</td>
-              <td>
-                <S.Pricehighlight variant="outcome">- R$ 59,90</S.Pricehighlight>
-              </td>
-              <td>Alimentação</td>
-              <td>15/04/2023</td>
-            </tr>
-            <tr>
-              <td width="40%">Desenvolvimento de site</td>
-              <td>
-                <S.Pricehighlight variant="income">R$ 12.000,00</S.Pricehighlight>
-              </td>
-              <td>Venda</td>
-              <td>13/04/2023</td>
-            </tr>
-            <tr>
-              <td width="40%">Desenvolvimento de site</td>
-              <td>
-                <S.Pricehighlight variant="income">R$ 12.000,00</S.Pricehighlight>
-              </td>
-              <td>Venda</td>
-              <td>13/04/2023</td>
-            </tr>
+            {transactions.map(transaction => {
+              return (
+                <tr key={transaction.id}>
+                  <td width="40%">{transaction.description}</td>
+                  <td>
+                    <S.Pricehighlight variant={transaction.type}>
+                      {transaction.price}
+                    </S.Pricehighlight>
+                  </td>
+                  <td>{transaction.category}</td>
+                  <td>{transaction.createdAt}</td>
+                </tr>
+              )
+            })}
           </tbody>
         </S.TransactionsTable>
       </S.TransactionsContainer>
